@@ -1,6 +1,6 @@
 {
   "name": "kindle-backup-helper",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Kindle 备份助手 - 跨平台 Kindle 备份工具（macOS / Windows）",
   "main": "main.js",
   "author": "Kindle Backup Helper",
