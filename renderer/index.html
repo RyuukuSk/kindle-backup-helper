@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'">
+  <title>Kindle 备份助手</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="root">
+    <h1 class="title">Kindle 备份助手</h1>
+    <p class="subtitle">安全备份你的 Kindle 设备与书籍</p>
+
+    <!-- 状态卡片 -->
+    <div class="card status-card">
+      <span id="connectionDot" class="dot red"></span>
+      <span id="connectionLabel" class="conn-label">正在检测…</span>
+    </div>
+
+    <!-- 备份内容 -->
+    <div class="section-label">备份内容</div>
+    <div class="segments" id="modeSegment">
+      <button class="seg active" data-mode="0">仅图书</button>
+      <button class="seg" data-mode="1">环境备份</button>
+      <button class="seg" data-mode="2">全量备份</button>
+    </div>
+    <p class="mode-detail" id="modeDetail">书籍 → 备份文件夹（无容量上限）</p>
+
+    <!-- 备份位置 -->
+    <div class="section-label">备份位置</div>
+    <div class="dest-row">
+      <select id="destSelect" class="dest-select">
+        <option value="">请选择备份位置…</option>
+      </select>
+      <button id="chooseDirBtn" class="btn-small">选择文件夹…</button>
+      <button id="chooseImageBtn" class="btn-small">选择映像…</button>
+    </div>
+    <p class="path-label" id="destPathLabel"></p>
+
+    <!-- 操作按钮 -->
+    <div class="card btn-card">
+      <button id="backupBtn" class="btn-primary">开始备份</button>
+      <div class="btn-row">
+        <button id="restoreBtn" class="btn-secondary">还原到 Kindle</button>
+        <button id="cancelBtn" class="btn-secondary" disabled>取消</button>
+      </div>
+    </div>
+
+    <!-- 进度 -->
+    <div class="progress-row">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <span class="percent" id="percentLabel"></span>
+    </div>
+    <p class="status-label" id="statusLabel">就绪</p>
+
+    <!-- 日志 -->
+    <button id="logToggleBtn" class="log-toggle">展开日志 ▾</button>
+    <div class="log-box" id="logBox" hidden>
+      <pre id="logContent"></pre>
+    </div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>

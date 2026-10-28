@@ -1,0 +1,23 @@
+# WorkBuddy 项目数据
+.workbuddy/
+
+# macOS
+.DS_Store
+
+# 依赖
+node_modules/
+
+# 打包产物（安装包通过 Release 上传，不进 git）
+dist/
+
+# 图标中间产物
+build/icons/
+
+# 本地素材（小红书等）
+小红书素材/
+
+# 旧版跨平台子目录（源码已提升到仓库根）
+Kindle备份助手跨平台/
+
+# 日志
+*.log

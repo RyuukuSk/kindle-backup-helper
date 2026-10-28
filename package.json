@@ -1,0 +1,47 @@
+{
+  "name": "kindle-backup-helper",
+  "version": "1.0.0",
+  "description": "Kindle 备份助手 - 跨平台 Kindle 备份工具（macOS / Windows）",
+  "main": "main.js",
+  "author": "Kindle Backup Helper",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist:mac": "electron-builder --mac",
+    "dist:win": "electron-builder --win",
+    "dist:all": "electron-builder --mac --win"
+  },
+  "devDependencies": {
+    "electron": "22.3.27",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.kindlebackup.helper",
+    "productName": "Kindle 备份助手",
+    "files": [
+      "main.js",
+      "engine.js",
+      "renderer/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "target": [
+        { "target": "dmg", "arch": ["x64", "arm64"] },
+        { "target": "zip", "arch": ["x64", "arm64"] }
+      ],
+      "category": "public.app-category.utilities",
+      "minimumSystemVersion": "10.13",
+      "icon": "build/icon.icns"
+    },
+    "win": {
+      "target": ["nsis", "portable"],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
